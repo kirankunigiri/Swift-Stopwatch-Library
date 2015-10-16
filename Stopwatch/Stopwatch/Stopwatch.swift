@@ -16,17 +16,44 @@ class Stopwatch: NSObject {
     // Timer
     private var timer = NSTimer()
     
-    // Time in a string
+    // MARK: Time in a string
+    /**
+    String representation of the number of hours shown on the stopwatch
+    */
     var strHours = "00"
+    /**
+    String representation of the number of minutes shown on the stopwatch
+    */
     var strMinutes = "00"
+    /**
+    String representation of the number of seconds shown on the stopwatch
+    */
     var strSeconds = "00"
+    /**
+    String representation of the number of tenths of a second shown on the stopwatch
+    */
     var strTenthsOfSecond = "00"
+    /**
+    String representation text shown on the stopwatch (the time)
+    */
     var timeText = ""
     
-    // Time in values
+    // MARK: Time in values
+    /**
+    The number of hours that will be shown on a stopwatch
+    */
     var numHours = 0
+    /**
+    The number of minutes that will be shown on a stopwatch
+    */
     var numMinutes = 0
+    /**
+    The number of seconds that will be shown on a stopwatch
+    */
     var numSeconds = 0
+    /**
+    The number of tenths of a second that will be shown on a stopwatch
+    */
     var numTenthsOfSecond = 0
     
     // Private variables
@@ -34,11 +61,12 @@ class Stopwatch: NSObject {
     private var pauseTime = NSTimeInterval()
     private var wasPause = false
     
+    
+    
     /**
     Updates the time and saves the values as strings
     */
     private func updateTime() {
-        
         // Save the current time
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
@@ -148,24 +176,30 @@ class Stopwatch: NSObject {
         return numHours * 3600000 + numMinutes * 60000 + numSeconds * 1000 + numTenthsOfSecond * 100
     }
     
-    
-    
 }
 
 
-/*
- * MARK: LabelStopwatch
+// MARK: LabelStopwatch
+
+/**
  * Subclass of Stopwatch
  *
- * Description: This class automatically updates any UILabel wih the stopwatch time. 
+ * This class automatically updates any UILabel wih the stopwatch time. 
  * This makes it easier to use the stopwatch. All you have to do is create a 
  * LabelStopwatch and pass in your UILabel as the parameter. Then the LabelStopwatch 
  * will automatically update your label as you call the start, stop, or reset functions.
 */
+
 class LabelStopwatch: Stopwatch {
     
+    /**
+    The label that will automatically be updated according to the stopwatch
+    */
     var label = UILabel()
 
+    /**
+    Creates a stopwatch with a label that it will constantly update    
+    */
     init(label: UILabel) {
         self.label = label
     }
@@ -177,7 +211,7 @@ class LabelStopwatch: Stopwatch {
         label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
     }
     
-    override func resetTimer() {
+    override private func resetTimer() {
         super.resetTimer()
         label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
     }

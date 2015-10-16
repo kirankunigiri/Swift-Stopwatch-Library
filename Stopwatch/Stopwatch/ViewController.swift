@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Outlets
+    // Properties
     @IBOutlet weak var stopwatchLabel: UILabel!
-    
-    // Objects
     var stopwatch: LabelStopwatch!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
