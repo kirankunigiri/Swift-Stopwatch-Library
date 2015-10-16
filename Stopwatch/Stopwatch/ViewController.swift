@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Create the stopwatch with the stopwatchLabel
         stopwatch = LabelStopwatch(label: stopwatchLabel)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 

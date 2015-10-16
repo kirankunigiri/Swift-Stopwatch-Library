@@ -9,78 +9,80 @@
 import Foundation
 import UIKit
 
-// MARK: Stopwatch
 
+// MARK: Stopwatch
 class Stopwatch: NSObject {
     
-    // Required Set Properties
-    var timer = NSTimer()
+    // Timer
+    private var timer = NSTimer()
     
-    // Properties of the label string
+    // Time in a string
     var strHours = "00"
     var strMinutes = "00"
     var strSeconds = "00"
     var strTenthsOfSecond = "00"
+    var timeText = ""
     
-    // General
-    var startTime = NSTimeInterval()
-    var pauseTime = NSTimeInterval()
-    var wasPause = false
-    
-    // Properties of actual values
+    // Time in values
     var numHours = 0
     var numMinutes = 0
     var numSeconds = 0
     var numTenthsOfSecond = 0
     
-    var timeText = ""
+    // Private variables
+    private var startTime = NSTimeInterval()
+    private var pauseTime = NSTimeInterval()
+    private var wasPause = false
     
-    
-    // MARK: Main Update Function
-    func updateTime() {
+    /**
+    Updates the time and saves the values as strings
+    */
+    private func updateTime() {
         
+        // Save the current time
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
-        // Find the difference between current time and start time.
+        // Find the difference between current time and start time to get the time elapsed
         var elapsedTime: NSTimeInterval = currentTime - startTime
         
-        // Calculate the hours in elapsed time.
+        // Calculate the hours of elapsed time
         numHours = Int(elapsedTime / 3600.0)
-        
         elapsedTime -= (NSTimeInterval(numHours) * 3600)
         
-        // Calculate the minutes in elapsed time.
+        // Calculate the minutes of elapsed time
         numMinutes = Int(elapsedTime / 60.0)
-        
         elapsedTime -= (NSTimeInterval(numMinutes) * 60)
         
-        // Calculate the seconds in elapsed time.
+        // Calculate the seconds of elapsed time
         numSeconds = Int(elapsedTime)
-        
         elapsedTime -= NSTimeInterval(numSeconds)
         
         // Finds out the number of milliseconds to be displayed.
         numTenthsOfSecond = Int(elapsedTime * 100)
         
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        // Save the values into strings with the 00 format
         strHours = String(format: "%02d", numHours)
         strMinutes = String(format: "%02d", numMinutes)
         strSeconds = String(format: "%02d", numSeconds)
         strTenthsOfSecond = String(format: "%02d", numTenthsOfSecond)
-        
+        timeText = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
     }
     
     
-    // MARK: Setting Functions
+    // MARK: Public functions
     private func resetTimer() {
         startTime = NSDate.timeIntervalSinceReferenceDate()
         strHours = "00"
         strMinutes = "00"
         strSeconds = "00"
         strTenthsOfSecond = "00"
+        timeText = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
+
     }
     
-    // MARK: Start/Stop Functions
+    /**
+    Starts the stopwatch, or resumes it if it was paused
+    */
     func start() {
         if !timer.valid {
             let aSelector: Selector = "updateTime"
@@ -94,6 +96,9 @@ class Stopwatch: NSObject {
         }
     }
     
+    /**
+    Pause the stopwatch so that it can be resumed later
+    */
     func pause() {
         wasPause = true
         
@@ -102,6 +107,9 @@ class Stopwatch: NSObject {
         startTime = pauseTime - startTime
     }
     
+    /**
+    Stops the stopwatch and erases the current time
+    */
     func stop() {
         wasPause = false
         
@@ -111,18 +119,31 @@ class Stopwatch: NSObject {
     
     
     // MARK: Value functions
+    
+    /**
+    Converts the time into hours only and returns it
+    */
     func getTimeInHours() -> Int {
         return numHours
     }
     
+    /**
+    Converts the time into minutes only and returns it
+    */
     func getTimeInMinutes() -> Int {
         return numHours * 60 + numMinutes
     }
     
+    /**
+    Converts the time into seconds only and returns it
+    */
     func getTimeInSeconds() -> Int {
         return numHours * 3600 + numMinutes * 60 + numSeconds
     }
     
+    /**
+    Converts the time into milliseconds only and returns it
+    */
     func getTimeInMilliseconds() -> Int {
         return numHours * 3600000 + numMinutes * 60000 + numSeconds * 1000 + numTenthsOfSecond * 100
     }
@@ -149,7 +170,7 @@ class LabelStopwatch: Stopwatch {
         self.label = label
     }
     
-    override func updateTime() {
+    override private func updateTime() {
         super.updateTime()
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
