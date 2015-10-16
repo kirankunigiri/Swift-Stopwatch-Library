@@ -14,6 +14,7 @@
 		9F30F46D1BD0A63600A95523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F30F46B1BD0A63600A95523 /* LaunchScreen.storyboard */; };
 		9F30F4781BD0A63600A95523 /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4771BD0A63600A95523 /* StopwatchTests.swift */; };
 		9F30F4831BD0A63600A95523 /* StopwatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4821BD0A63600A95523 /* StopwatchUITests.swift */; };
+		9F30F4931BD0B4EF00A95523 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4921BD0B4EF00A95523 /* Stopwatch.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9F30F47E1BD0A63600A95523 /* StopwatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopwatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F30F4821BD0A63600A95523 /* StopwatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchUITests.swift; sourceTree = "<group>"; };
 		9F30F4841BD0A63600A95523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F30F4921BD0B4EF00A95523 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				9F30F4621BD0A63600A95523 /* AppDelegate.swift */,
 				9F30F4641BD0A63600A95523 /* ViewController.swift */,
 				9F30F4661BD0A63600A95523 /* Main.storyboard */,
+				9F30F4921BD0B4EF00A95523 /* Stopwatch.swift */,
 				9F30F4691BD0A63600A95523 /* Assets.xcassets */,
 				9F30F46B1BD0A63600A95523 /* LaunchScreen.storyboard */,
 				9F30F46E1BD0A63600A95523 /* Info.plist */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F30F4651BD0A63600A95523 /* ViewController.swift in Sources */,
+				9F30F4931BD0B4EF00A95523 /* Stopwatch.swift in Sources */,
 				9F30F4631BD0A63600A95523 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

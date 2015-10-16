@@ -15,11 +15,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdr-BI-Hru">
+                                <rect key="frame" x="196" y="264" width="208" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="XDg-l7-QfI"/>
+                                    <constraint firstAttribute="height" constant="71" id="mTI-NA-csk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-8I-uQL">
+                                <rect key="frame" x="283" y="343" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I3h-5i-9Ig"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQk-do-kzz">
+                                <rect key="frame" x="279" y="382" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMd-kb-5lC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blA-dk-Aac">
+                                <rect key="frame" x="284" y="420" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZr-re-gdQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cdr-BI-Hru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0jg-jD-8mv"/>
+                            <constraint firstItem="cdr-BI-Hru" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="244" id="3Py-gP-7Hw"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="top" secondItem="BOF-8I-uQL" secondAttribute="bottom" constant="8" id="5YY-8Y-4lv"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="top" secondItem="XQk-do-kzz" secondAttribute="bottom" constant="8" id="CMb-Ii-HQm"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jqj-yv-a0S"/>
+                            <constraint firstItem="XQk-do-kzz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K02-qw-tOS"/>
+                            <constraint firstItem="XQk-do-kzz" firstAttribute="top" secondItem="BOF-8I-uQL" secondAttribute="bottom" constant="9" id="Njt-T5-qSb"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="top" secondItem="XQk-do-kzz" secondAttribute="bottom" constant="8" id="PPS-NA-VJh"/>
+                            <constraint firstItem="BOF-8I-uQL" firstAttribute="top" secondItem="cdr-BI-Hru" secondAttribute="bottom" constant="8" id="R3q-ud-AVY"/>
+                            <constraint firstItem="cdr-BI-Hru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RU0-FB-Zvg"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aMf-DB-lwZ"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="centerY" secondItem="cdr-BI-Hru" secondAttribute="centerY" id="brJ-Bs-WeW"/>
+                            <constraint firstItem="BOF-8I-uQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l9P-5p-9gK"/>
+                            <constraint firstItem="BOF-8I-uQL" firstAttribute="centerY" secondItem="cdr-BI-Hru" secondAttribute="centerY" id="m2O-ep-GGB"/>
+                            <constraint firstItem="cdr-BI-Hru" firstAttribute="leading" secondItem="BOF-8I-uQL" secondAttribute="trailing" constant="8" id="mIL-0B-iZr"/>
+                            <constraint firstItem="blA-dk-Aac" firstAttribute="leading" secondItem="cdr-BI-Hru" secondAttribute="trailing" constant="8" id="uRO-D0-daI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Py-gP-7Hw"/>
+                                <exclude reference="mIL-0B-iZr"/>
+                                <exclude reference="m2O-ep-GGB"/>
+                                <exclude reference="5YY-8Y-4lv"/>
+                                <exclude reference="CMb-Ii-HQm"/>
+                                <exclude reference="Jqj-yv-a0S"/>
+                                <exclude reference="brJ-Bs-WeW"/>
+                                <exclude reference="uRO-D0-daI"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="stopwatchLabel" destination="cdr-BI-Hru" id="JGw-bw-7OC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="399"/>
         </scene>
     </scenes>
 </document>

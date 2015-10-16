@@ -10,9 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Outlets
+    @IBOutlet weak var stopwatchLabel: UILabel!
+    
+    // Objects
+    var stopwatch: LabelStopwatch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        stopwatch = LabelStopwatch(label: stopwatchLabel)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +28,19 @@ class ViewController: UIViewController {
     }
 
 
+    // Start button action
+    @IBAction func startButtonPressed(sender: UIButton) {
+        stopwatch.start()
+    }
+    
+    // Pause button action
+    @IBAction func pauseButtonPressed(sender: UIButton) {
+        stopwatch.pause()
+    }
+    
+    // Stop button pressed
+    @IBAction func stopButtonPressed(sender: UIButton) {
+        stopwatch.stop()
+    }
 }
 
