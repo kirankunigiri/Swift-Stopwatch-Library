@@ -66,7 +66,7 @@ class Stopwatch: NSObject {
     /**
     Updates the time and saves the values as strings
     */
-    private func updateTime() {
+    @objc private func updateTime() {
         // Save the current time
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
@@ -113,8 +113,7 @@ class Stopwatch: NSObject {
     */
     func start() {
         if !timer.valid {
-            let aSelector: Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "updateTime", userInfo: nil, repeats: true)
             
             if wasPause {
                 startTime = NSDate.timeIntervalSinceReferenceDate() - startTime
