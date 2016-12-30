@@ -14,7 +14,7 @@ import UIKit
 class Stopwatch: NSObject {
     
     // Timer
-    private var timer = NSTimer()
+    fileprivate var timer = Timer()
     
     // MARK: Time in a string
     /**
@@ -57,33 +57,33 @@ class Stopwatch: NSObject {
     var numTenthsOfSecond = 0
     
     // Private variables
-    private var startTime = NSTimeInterval()
-    private var pauseTime = NSTimeInterval()
-    private var wasPause = false
+    fileprivate var startTime = TimeInterval()
+    fileprivate var pauseTime = TimeInterval()
+    fileprivate var wasPause = false
     
     
     
     /**
     Updates the time and saves the values as strings
     */
-    @objc private func updateTime() {
+    @objc fileprivate func updateTime() {
         // Save the current time
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = Date.timeIntervalSinceReferenceDate
         
         // Find the difference between current time and start time to get the time elapsed
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: TimeInterval = currentTime - startTime
         
         // Calculate the hours of elapsed time
         numHours = Int(elapsedTime / 3600.0)
-        elapsedTime -= (NSTimeInterval(numHours) * 3600)
+        elapsedTime -= (TimeInterval(numHours) * 3600)
         
         // Calculate the minutes of elapsed time
         numMinutes = Int(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(numMinutes) * 60)
+        elapsedTime -= (TimeInterval(numMinutes) * 60)
         
         // Calculate the seconds of elapsed time
         numSeconds = Int(elapsedTime)
-        elapsedTime -= NSTimeInterval(numSeconds)
+        elapsedTime -= TimeInterval(numSeconds)
         
         // Finds out the number of milliseconds to be displayed.
         numTenthsOfSecond = Int(elapsedTime * 100)
@@ -98,8 +98,8 @@ class Stopwatch: NSObject {
     
     
     // MARK: Public functions
-    private func resetTimer() {
-        startTime = NSDate.timeIntervalSinceReferenceDate()
+    fileprivate func resetTimer() {
+        startTime = Date.timeIntervalSinceReferenceDate
         strHours = "00"
         strMinutes = "00"
         strSeconds = "00"
@@ -112,13 +112,13 @@ class Stopwatch: NSObject {
     Starts the stopwatch, or resumes it if it was paused
     */
     func start() {
-        if !timer.valid {
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(Stopwatch.updateTime), userInfo: nil, repeats: true)
             
             if wasPause {
-                startTime = NSDate.timeIntervalSinceReferenceDate() - startTime
+                startTime = Date.timeIntervalSinceReferenceDate - startTime
             } else {
-                startTime = NSDate.timeIntervalSinceReferenceDate()
+                startTime = Date.timeIntervalSinceReferenceDate
             }
         }
     }
@@ -130,7 +130,7 @@ class Stopwatch: NSObject {
         wasPause = true
         
         timer.invalidate()
-        pauseTime = NSDate.timeIntervalSinceReferenceDate()
+        pauseTime = Date.timeIntervalSinceReferenceDate
         startTime = pauseTime - startTime
     }
     
@@ -203,14 +203,14 @@ class LabelStopwatch: Stopwatch {
         self.label = label
     }
     
-    override private func updateTime() {
+    override fileprivate func updateTime() {
         super.updateTime()
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
     }
     
-    override private func resetTimer() {
+    override fileprivate func resetTimer() {
         super.resetTimer()
         label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strTenthsOfSecond)"
     }

@@ -28,17 +28,17 @@ class ViewController: UIViewController {
 
 
     // Start button action
-    @IBAction func startButtonPressed(sender: UIButton) {
+    @IBAction func startButtonPressed(_ sender: UIButton) {
         stopwatch.start()
     }
     
     // Pause button action
-    @IBAction func pauseButtonPressed(sender: UIButton) {
+    @IBAction func pauseButtonPressed(_ sender: UIButton) {
         stopwatch.pause()
     }
     
     // Stop button pressed
-    @IBAction func stopButtonPressed(sender: UIButton) {
+    @IBAction func stopButtonPressed(_ sender: UIButton) {
         stopwatch.stop()
     }
 }

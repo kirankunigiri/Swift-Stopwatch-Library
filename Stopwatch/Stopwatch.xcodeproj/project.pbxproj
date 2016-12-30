@@ -14,7 +14,7 @@
 		9F30F46D1BD0A63600A95523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F30F46B1BD0A63600A95523 /* LaunchScreen.storyboard */; };
 		9F30F4781BD0A63600A95523 /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4771BD0A63600A95523 /* StopwatchTests.swift */; };
 		9F30F4831BD0A63600A95523 /* StopwatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4821BD0A63600A95523 /* StopwatchUITests.swift */; };
-		9F30F4931BD0B4EF00A95523 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4921BD0B4EF00A95523 /* Stopwatch.swift */; settings = {ASSET_TAGS = (); }; };
+		9F30F4931BD0B4EF00A95523 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30F4921BD0B4EF00A95523 /* Stopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,13 +195,16 @@
 				TargetAttributes = {
 					9F30F45E1BD0A63500A95523 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 					};
 					9F30F4721BD0A63600A95523 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 9F30F45E1BD0A63500A95523;
 					};
 					9F30F47D1BD0A63600A95523 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 9F30F45E1BD0A63500A95523;
 					};
 				};
@@ -406,6 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.Stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -417,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.Stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -428,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.StopwatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stopwatch.app/Stopwatch";
 			};
 			name = Debug;
@@ -440,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.StopwatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stopwatch.app/Stopwatch";
 			};
 			name = Release;
@@ -451,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.StopwatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stopwatch;
 				USES_XCTRUNNER = YES;
 			};
@@ -463,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.StopwatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stopwatch;
 				USES_XCTRUNNER = YES;
 			};
@@ -487,6 +496,7 @@
 				9F30F4891BD0A63600A95523 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F30F48A1BD0A63600A95523 /* Build configuration list for PBXNativeTarget "StopwatchTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +505,7 @@
 				9F30F48C1BD0A63600A95523 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F30F48D1BD0A63600A95523 /* Build configuration list for PBXNativeTarget "StopwatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +514,7 @@
 				9F30F48F1BD0A63600A95523 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
